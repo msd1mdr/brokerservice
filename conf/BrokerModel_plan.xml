@@ -1,0 +1,75 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<deployment-plan xmlns="http://xmlns.oracle.com/weblogic/deployment-plan" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.oracle.com/weblogic/deployment-plan http://xmlns.oracle.com/weblogic/deployment-plan/1.0/deployment-plan.xsd">
+  <application-name>BrokerModel</application-name>
+  <variable-definition>
+    <variable>
+      <name>JDBCDriverParams_PasswordEncrypted_14642149001870</name>
+      <value>{AES}LSO59KOJ/X0rhCY35WDx97ESa9OkAKQ2lBJLOUmnPtA=</value>
+    </variable>
+    <variable>
+      <name>JDBCProperty_user_Value_14642149142031</name>
+      <value>SI_Admin</value>
+    </variable>
+  </variable-definition>
+  <module-override>
+    <module-name>BrokerModel.ear</module-name>
+    <module-type>ear</module-type>
+    <module-descriptor external="false">
+      <root-element>weblogic-application</root-element>
+      <uri>META-INF/weblogic-application.xml</uri>
+    </module-descriptor>
+    <module-descriptor external="false">
+      <root-element>application</root-element>
+      <uri>META-INF/application.xml</uri>
+    </module-descriptor>
+    <module-descriptor external="true">
+      <root-element>wldf-resource</root-element>
+      <uri>META-INF/weblogic-diagnostics.xml</uri>
+    </module-descriptor>
+    <module-descriptor external="false">
+      <root-element>jdbc-data-source</root-element>
+      <uri>META-INF/SIAdmin-jdbc.xml</uri>
+      <variable-assignment>
+        <name>JDBCDriverParams_PasswordEncrypted_14642149001870</name>
+        <xpath>/jdbc-data-source/jdbc-driver-params/password-encrypted</xpath>
+      </variable-assignment>
+      <variable-assignment>
+        <name>JDBCProperty_user_Value_14642149142031</name>
+        <xpath>/jdbc-data-source/jdbc-driver-params/properties/property/[name="user"]/value</xpath>
+      </variable-assignment>
+    </module-descriptor>
+  </module-override>
+  <module-override>
+    <module-name>BrokerModel.jar</module-name>
+    <module-type>ejb</module-type>
+    <module-descriptor external="false">
+      <root-element>weblogic-ejb-jar</root-element>
+      <uri>META-INF/weblogic-ejb-jar.xml</uri>
+    </module-descriptor>
+    <module-descriptor external="false">
+      <root-element>ejb-jar</root-element>
+      <uri>META-INF/ejb-jar.xml</uri>
+    </module-descriptor>
+    <module-descriptor external="true">
+      <root-element>weblogic-webservices</root-element>
+      <uri>META-INF/weblogic-webservices.xml</uri>
+    </module-descriptor>
+    <module-descriptor external="false">
+      <root-element>webservices</root-element>
+      <uri>META-INF/webservices.xml</uri>
+    </module-descriptor>
+    <module-descriptor external="true">
+      <root-element>webservice-policy-ref</root-element>
+      <uri>META-INF/weblogic-webservices-policy.xml</uri>
+    </module-descriptor>
+    <module-descriptor external="true">
+      <root-element>persistence-configuration</root-element>
+      <uri>META-INF/persistence-configuration.xml</uri>
+    </module-descriptor>
+    <module-descriptor external="false">
+      <root-element>persistence</root-element>
+      <uri>META-INF/persistence.xml</uri>
+    </module-descriptor>
+  </module-override>
+  <config-root>C:\oracle\Middleware\user_projects\domains\base_domain\servers\AdminServer\upload\BrokerModel_Plan</config-root>
+</deployment-plan>

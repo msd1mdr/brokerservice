@@ -1,0 +1,4 @@
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+  <system systemId="http://10.204.6.247:8100/StaticMsgSessionBean/StaticMsgSessionBeanService/#%7Bhttp%3A%2F%2Fsession.dsi.man%2F%7DStaticMsgSessionBeanService?wsdl"
+          uri="../man/dsi/proxy/StaticMsgSessionBeanService.wsdl"/>
+</catalog>

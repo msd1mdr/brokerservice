@@ -1,0 +1,16 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle-webservice-clients xmlns:ns2="http://java.sun.com/xml/ns/javaee">
+   <webservice-client>
+      <service-qname namespaceURI="http://session.ab.man/"
+                     localpart="AnggotaBursaSessionBeanService"/>
+      <port-info>
+         <wsdl-port namespaceURI="http://session.ab.man/"
+                    localpart="AnggotaBursaSessionBeanServicePort"/>
+         <runtime/>
+         <operations>
+            <operation name="getAnggotaBursaFindByUsrSendMethod"/>
+            <operation name="getAnggotaBursaFindByUsrSerial"/>
+         </operations>
+      </port-info>
+   </webservice-client>
+</oracle-webservice-clients>

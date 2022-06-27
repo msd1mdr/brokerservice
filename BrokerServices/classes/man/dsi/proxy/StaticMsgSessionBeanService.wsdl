@@ -1,0 +1,119 @@
+<wsdl:definitions
+     name="StaticMsgSessionBeanService"
+     targetNamespace="http://session.dsi.man/"
+     xmlns:tns="http://session.dsi.man/"
+     xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+     xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+     xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/"
+     xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/"
+    >
+    <wsdl:types>
+        <xs:schema version="1.0" targetNamespace="http://session.dsi.man/types" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+            <xs:complexType name="staticMsg">
+                <xs:sequence>
+                    <xs:element name="accountnumber" type="xs:string" minOccurs="0"/>
+                    <xs:element name="ackAccountnumber" type="xs:string" minOccurs="0"/>
+                    <xs:element name="ackActivity" type="xs:string" minOccurs="0"/>
+                    <xs:element name="ackParticipantid" type="xs:string" minOccurs="0"/>
+                    <xs:element name="ackSidnumber" type="xs:string" minOccurs="0"/>
+                    <xs:element name="ackStatus" type="xs:string" minOccurs="0"/>
+                    <xs:element name="ackTime" type="xs:dateTime" minOccurs="0"/>
+                    <xs:element name="activity" type="xs:string" minOccurs="0"/>
+                    <xs:element name="activitydate" type="xs:string" minOccurs="0"/>
+                    <xs:element name="bankaccnumber" type="xs:string" minOccurs="0"/>
+                    <xs:element name="bankcode" type="xs:string" minOccurs="0"/>
+                    <xs:element name="createTime" type="xs:dateTime" minOccurs="0"/>
+                    <xs:element name="extref" type="xs:string" minOccurs="0"/>
+                    <xs:element name="flag" type="xs:string" minOccurs="0"/>
+                    <xs:element name="investorname" type="xs:string" minOccurs="0"/>
+                    <xs:element name="participantid" type="xs:string" minOccurs="0"/>
+                    <xs:element name="participantname" type="xs:string" minOccurs="0"/>
+                    <xs:element name="sidnumber" type="xs:string" minOccurs="0"/>
+                </xs:sequence>
+            </xs:complexType>
+        </xs:schema>
+        <schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://session.dsi.man/"
+             xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://session.dsi.man/"
+             xmlns:ns1="http://session.dsi.man/types">
+            <import namespace="http://session.dsi.man/types"/>
+            <xsd:complexType name="getStaticMsgFindByLimit">
+                <xsd:sequence>
+                    <xsd:element name="participantid" type="xsd:string"/>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:element name="getStaticMsgFindByLimit" type="tns:getStaticMsgFindByLimit"/>
+            <xsd:complexType name="getStaticMsgFindByLimitResponse">
+                <xsd:sequence>
+                    <xsd:element name="return" minOccurs="0" maxOccurs="unbounded" type="ns1:staticMsg"/>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:element name="getStaticMsgFindByLimitResponse" type="tns:getStaticMsgFindByLimitResponse"/>
+            <xsd:complexType name="updateStaticMsgSetFlag">
+                <xsd:sequence>
+                    <xsd:element name="participantid" type="xsd:string"/>
+                    <xsd:element name="extref" type="xsd:string"/>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:element name="updateStaticMsgSetFlag" type="tns:updateStaticMsgSetFlag"/>
+            <xsd:complexType name="updateStaticMsgSetFlagResponse">
+                <xsd:sequence>
+                    <xsd:element name="return" type="xsd:int"/>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:element name="updateStaticMsgSetFlagResponse" type="tns:updateStaticMsgSetFlagResponse"/>
+        </schema>
+    </wsdl:types>
+    <wsdl:message name="getStaticMsgFindByLimitInput">
+        <wsdl:part name="parameters" element="tns:getStaticMsgFindByLimit"/>
+    </wsdl:message>
+    <wsdl:message name="getStaticMsgFindByLimitOutput">
+        <wsdl:part name="parameters" element="tns:getStaticMsgFindByLimitResponse"/>
+    </wsdl:message>
+    <wsdl:message name="updateStaticMsgSetFlagInput">
+        <wsdl:part name="parameters" element="tns:updateStaticMsgSetFlag"/>
+    </wsdl:message>
+    <wsdl:message name="updateStaticMsgSetFlagOutput">
+        <wsdl:part name="parameters" element="tns:updateStaticMsgSetFlagResponse"/>
+    </wsdl:message>
+    <wsdl:portType name="StaticMsgSessionBeanService">
+        <wsdl:operation name="getStaticMsgFindByLimit">
+            <wsdl:input message="tns:getStaticMsgFindByLimitInput" xmlns:ns1="http://www.w3.org/2006/05/addressing/wsdl"
+                 ns1:Action=""/>
+            <wsdl:output message="tns:getStaticMsgFindByLimitOutput" xmlns:ns1="http://www.w3.org/2006/05/addressing/wsdl"
+                 ns1:Action=""/>
+        </wsdl:operation>
+        <wsdl:operation name="updateStaticMsgSetFlag">
+            <wsdl:input message="tns:updateStaticMsgSetFlagInput" xmlns:ns1="http://www.w3.org/2006/05/addressing/wsdl"
+                 ns1:Action=""/>
+            <wsdl:output message="tns:updateStaticMsgSetFlagOutput" xmlns:ns1="http://www.w3.org/2006/05/addressing/wsdl"
+                 ns1:Action=""/>
+        </wsdl:operation>
+    </wsdl:portType>
+    <wsdl:binding name="StaticMsgSessionBeanServiceSoapHttp" type="tns:StaticMsgSessionBeanService">
+        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <wsdl:operation name="getStaticMsgFindByLimit">
+            <soap:operation soapAction=""/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="updateStaticMsgSetFlag">
+            <soap:operation soapAction=""/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:service name="StaticMsgSessionBeanService">
+        <wsdl:port name="StaticMsgSessionBeanServicePort" binding="tns:StaticMsgSessionBeanServiceSoapHttp">
+            <soap:address location="http://10.204.6.247:8100/StaticMsgSessionBean/StaticMsgSessionBeanService"/>
+        </wsdl:port>
+    </wsdl:service>
+</wsdl:definitions>

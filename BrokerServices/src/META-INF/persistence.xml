@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<persistence xmlns="http://java.sun.com/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_1_0.xsd"
+             version="1.0">
+  <persistence-unit name="BrokerModel">
+    <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+    <jta-data-source>java:/app/jdbc/jdbc/SIAdminDS</jta-data-source>
+    <class>man.iab.entities.Bejacn</class>
+    <class>man.connect.entities.ConnectT</class>
+    <class>man.ab.entities.AnggotaBursa</class>
+    <class>man.ias.entities.StmtBroker</class>
+    <class>man.dsi.entities.StaticMsg</class>
+    <properties>
+      <property name="eclipselink.target-server" value="WebLogic_10"/>
+      <property name="javax.persistence.jtaDataSource"
+                value="java:/app/jdbc/jdbc/SIAdminDS"/>
+    </properties>
+  </persistence-unit>
+</persistence>

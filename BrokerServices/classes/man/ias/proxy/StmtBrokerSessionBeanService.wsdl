@@ -1,0 +1,122 @@
+<wsdl:definitions
+     name="StmtBrokerSessionBeanService"
+     targetNamespace="http://session.ias.man/"
+     xmlns:tns="http://session.ias.man/"
+     xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+     xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+     xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/"
+     xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/"
+    >
+    <wsdl:types>
+        <xs:schema version="1.0" targetNamespace="http://session.ias.man/types" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+            <xs:complexType name="stmtBroker">
+                <xs:sequence>
+                    <xs:element name="acctno" type="xs:string" minOccurs="0"/>
+                    <xs:element name="acnote" type="xs:string" minOccurs="0"/>
+                    <xs:element name="bankid" type="xs:string" minOccurs="0"/>
+                    <xs:element name="clsbal" type="xs:double" minOccurs="0"/>
+                    <xs:element name="curcod" type="xs:string" minOccurs="0"/>
+                    <xs:element name="drorcr" type="xs:string" minOccurs="0"/>
+                    <xs:element name="extref" type="xs:string" minOccurs="0"/>
+                    <xs:element name="filename" type="xs:string" minOccurs="0"/>
+                    <xs:element name="flag" type="xs:string" minOccurs="0"/>
+                    <xs:element name="kodeAb" type="xs:string" minOccurs="0"/>
+                    <xs:element name="opnbal" type="xs:double" minOccurs="0"/>
+                    <xs:element name="seqnum" type="xs:long" minOccurs="0"/>
+                    <xs:element name="trnamt" type="xs:double" minOccurs="0"/>
+                    <xs:element name="trndsc" type="xs:string" minOccurs="0"/>
+                    <xs:element name="trnref" type="xs:string" minOccurs="0"/>
+                    <xs:element name="trntyp" type="xs:string" minOccurs="0"/>
+                    <xs:element name="valdate" type="xs:string" minOccurs="0"/>
+                </xs:sequence>
+            </xs:complexType>
+        </xs:schema>
+        <schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://session.ias.man/"
+             xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://session.ias.man/"
+             xmlns:ns1="http://session.ias.man/types">
+            <import namespace="http://session.ias.man/types"/>
+            <xsd:complexType name="getStmtBrokerFindByLimit">
+                <xsd:sequence>
+                    <xsd:element name="kodeAb" type="xsd:string"/>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:element name="getStmtBrokerFindByLimit" type="tns:getStmtBrokerFindByLimit"/>
+            <xsd:complexType name="getStmtBrokerFindByLimitResponse">
+                <xsd:sequence>
+                    <xsd:element name="return" minOccurs="0" maxOccurs="unbounded" type="ns1:stmtBroker"/>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:element name="getStmtBrokerFindByLimitResponse" type="tns:getStmtBrokerFindByLimitResponse"/>
+            <xsd:complexType name="updateStmtBrokerSetFlag">
+                <xsd:sequence>
+                    <xsd:element name="kodeAb" type="xsd:string"/>
+                    <xsd:element name="extref" type="xsd:string"/>
+                    <xsd:element name="acctno" type="xsd:string"/>
+                    <xsd:element name="valdate" type="xsd:string"/>
+                    <xsd:element name="seqnum" type="xsd:long"/>
+                    <xsd:element name="trnref" type="xsd:string"/>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:element name="updateStmtBrokerSetFlag" type="tns:updateStmtBrokerSetFlag"/>
+            <xsd:complexType name="updateStmtBrokerSetFlagResponse">
+                <xsd:sequence>
+                    <xsd:element name="return" type="xsd:int"/>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:element name="updateStmtBrokerSetFlagResponse" type="tns:updateStmtBrokerSetFlagResponse"/>
+        </schema>
+    </wsdl:types>
+    <wsdl:message name="getStmtBrokerFindByLimitInput">
+        <wsdl:part name="parameters" element="tns:getStmtBrokerFindByLimit"/>
+    </wsdl:message>
+    <wsdl:message name="getStmtBrokerFindByLimitOutput">
+        <wsdl:part name="parameters" element="tns:getStmtBrokerFindByLimitResponse"/>
+    </wsdl:message>
+    <wsdl:message name="updateStmtBrokerSetFlagInput">
+        <wsdl:part name="parameters" element="tns:updateStmtBrokerSetFlag"/>
+    </wsdl:message>
+    <wsdl:message name="updateStmtBrokerSetFlagOutput">
+        <wsdl:part name="parameters" element="tns:updateStmtBrokerSetFlagResponse"/>
+    </wsdl:message>
+    <wsdl:portType name="StmtBrokerSessionBeanService">
+        <wsdl:operation name="getStmtBrokerFindByLimit">
+            <wsdl:input message="tns:getStmtBrokerFindByLimitInput" xmlns:ns1="http://www.w3.org/2006/05/addressing/wsdl"
+                 ns1:Action=""/>
+            <wsdl:output message="tns:getStmtBrokerFindByLimitOutput" xmlns:ns1="http://www.w3.org/2006/05/addressing/wsdl"
+                 ns1:Action=""/>
+        </wsdl:operation>
+        <wsdl:operation name="updateStmtBrokerSetFlag">
+            <wsdl:input message="tns:updateStmtBrokerSetFlagInput" xmlns:ns1="http://www.w3.org/2006/05/addressing/wsdl"
+                 ns1:Action=""/>
+            <wsdl:output message="tns:updateStmtBrokerSetFlagOutput" xmlns:ns1="http://www.w3.org/2006/05/addressing/wsdl"
+                 ns1:Action=""/>
+        </wsdl:operation>
+    </wsdl:portType>
+    <wsdl:binding name="StmtBrokerSessionBeanServiceSoapHttp" type="tns:StmtBrokerSessionBeanService">
+        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <wsdl:operation name="getStmtBrokerFindByLimit">
+            <soap:operation soapAction=""/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="updateStmtBrokerSetFlag">
+            <soap:operation soapAction=""/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:service name="StmtBrokerSessionBeanService">
+        <wsdl:port name="StmtBrokerSessionBeanServicePort" binding="tns:StmtBrokerSessionBeanServiceSoapHttp">
+            <soap:address location="http://10.204.6.247:8100/StmtBrokerSessionBean/StmtBrokerSessionBeanService"/>
+        </wsdl:port>
+    </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,24 @@
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+  <system systemId="http://localhost:7001/SIAdmin-IABModel-webapp/BejacnSessionBeanService/#%7Bhttp%3A%2F%2Fsession.iab.man%2F%7DBejacnSessionBeanService?wsdl"
+          uri="../man/iab/session/BejacnSessionBeanService.wsdl"/>
+  <system systemId="http://soabpm-vm:8001/SIAdmin-IABModel-webapp/BejacnSessionBeanService/#%7Bhttp%3A%2F%2Fsession.iab.man%2F%7DBejacnSessionBeanService?wsdl"
+          uri="../man/iab/session/BejacnSessionBeanService.wsdl"/>
+  <system systemId="http://soabpm-vm:8001/BejacnSessionBean/BejacnSessionBeanService/#%7Bhttp%3A%2F%2Fsession.iab.man%2F%7DBejacnSessionBeanService?wsdl"
+          uri="../man/iab/proxy/BejacnSessionBeanService.wsdl"/>
+  <system systemId="http://http//10.204.6.247:8100/BejacnSessionBean/BejacnSessionBeanService/#%7Bhttp%3A%2F%2Fsession.iab.man%2F%7DBejacnSessionBeanService?wsdl"
+          uri="../man/iab/proxy/BejacnSessionBeanService.wsdl"/>
+  <system systemId="http://10.204.6.247:8100/BejacnSessionBean/BejacnSessionBeanService/#%7Bhttp%3A%2F%2Fsession.iab.man%2F%7DBejacnSessionBeanService?wsdl"
+          uri="../man/iab/proxy/BejacnSessionBeanService.wsdl"/>
+  <system systemId="http://10.204.6.247:8100/ConnectTSessionBean/ConnectTSessionBeanService/#%7Bhttp%3A%2F%2Fsession.connect.man%2F%7DConnectTSessionBeanService?wsdl"
+          uri="../man/connect/proxy/ConnectTSessionBeanService.wsdl"/>
+  <system systemId="http://10.204.6.247:8100/AnggotaBursaSession/AnggotaBursaSessionBeanService/#%7Bhttp%3A%2F%2Fsession.ab.man%2F%7DAnggotaBursaSessionBeanService?wsdl"
+          uri="../man/ab/proxy/AnggotaBursaSessionBeanService.wsdl"/>
+  <system systemId="http://10.204.6.247:8100/AnggotaBursaSessionBean/AnggotaBursaSessionBeanService/#%7Bhttp%3A%2F%2Fsession.ab.man%2F%7DAnggotaBursaSessionBeanService?wsdl"
+          uri="../man/ab/proxy/AnggotaBursaSessionBeanService.wsdl"/>
+  <system systemId="http://10.204.6.247:8100/StmtBrokerSessionBean/StmtBrokerSessionBeanService/#%7Bhttp%3A%2F%2Fsession.ias.man%2F%7DStmtBrokerSessionBeanService?wsdl"
+          uri="../man/ias/proxy/StmtBrokerSessionBeanService.wsdl"/>
+  <system systemId="http://10.204.6.247:8100/BrokerServices/StmtBrokerSessionBeanService/#%7Bhttp%3A%2F%2Fsession.ias.man%2F%7DStmtBrokerSessionBeanService?wsdl"
+          uri="../man/ias/proxy/StmtBrokerSessionBeanService.wsdl"/>
+  <system systemId="http://10.204.6.247:8100/StaticMsgSessionBean/StaticMsgSessionBeanService/#%7Bhttp%3A%2F%2Fsession.dsi.man%2F%7DStaticMsgSessionBeanService?wsdl"
+          uri="../man/dsi/proxy/StaticMsgSessionBeanService.wsdl"/>
+</catalog>

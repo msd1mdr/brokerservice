@@ -1,0 +1,120 @@
+<wsdl:definitions
+     name="AnggotaBursaSessionBeanService"
+     targetNamespace="http://session.ab.man/"
+     xmlns:tns="http://session.ab.man/"
+     xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+     xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+     xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/"
+     xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/"
+    >
+    <wsdl:types>
+        <xs:schema version="1.0" targetNamespace="http://session.ab.man/types" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+            <xs:complexType name="anggotaBursa">
+                <xs:sequence>
+                    <xs:element name="direktory" type="xs:string" minOccurs="0"/>
+                    <xs:element name="emailAddress" type="xs:string" minOccurs="0"/>
+                    <xs:element name="excp1" type="xs:string" minOccurs="0"/>
+                    <xs:element name="excp2" type="xs:string" minOccurs="0"/>
+                    <xs:element name="fileFormat" type="xs:string" minOccurs="0"/>
+                    <xs:element name="fileSize" type="xs:string" minOccurs="0"/>
+                    <xs:element name="ftpPasswd" type="xs:string" minOccurs="0"/>
+                    <xs:element name="ftpUser" type="xs:string" minOccurs="0"/>
+                    <xs:element name="interval" type="xs:long" minOccurs="0"/>
+                    <xs:element name="ipAddress" type="xs:string" minOccurs="0"/>
+                    <xs:element name="kodeAb" type="xs:string" minOccurs="0"/>
+                    <xs:element name="namaAb" type="xs:string" minOccurs="0"/>
+                    <xs:element name="nextSchd" type="xs:dateTime" minOccurs="0"/>
+                    <xs:element name="noRekening" type="xs:string" minOccurs="0"/>
+                    <xs:element name="port" type="xs:long" minOccurs="0"/>
+                    <xs:element name="sendMethod" type="xs:string" minOccurs="0"/>
+                    <xs:element name="serialNo" type="xs:string" minOccurs="0"/>
+                    <xs:element name="wsPasswd" type="xs:string" minOccurs="0"/>
+                    <xs:element name="wsUser" type="xs:string" minOccurs="0"/>
+                </xs:sequence>
+            </xs:complexType>
+        </xs:schema>
+        <schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://session.ab.man/"
+             xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://session.ab.man/"
+             xmlns:ns1="http://session.ab.man/types">
+            <import namespace="http://session.ab.man/types"/>
+            <xsd:complexType name="getAnggotaBursaFindByUsrSendMethod">
+                <xsd:sequence>
+                    <xsd:element name="wsUser" type="xsd:string"/>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:element name="getAnggotaBursaFindByUsrSendMethod" type="tns:getAnggotaBursaFindByUsrSendMethod"/>
+            <xsd:complexType name="getAnggotaBursaFindByUsrSendMethodResponse">
+                <xsd:sequence>
+                    <xsd:element name="return" minOccurs="0" maxOccurs="unbounded" type="ns1:anggotaBursa"/>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:element name="getAnggotaBursaFindByUsrSendMethodResponse" type="tns:getAnggotaBursaFindByUsrSendMethodResponse"/>
+            <xsd:complexType name="getAnggotaBursaFindByUsrSerial">
+                <xsd:sequence>
+                    <xsd:element name="kodeAb" type="xsd:string"/>
+                    <xsd:element name="serialNo" type="xsd:string"/>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:element name="getAnggotaBursaFindByUsrSerial" type="tns:getAnggotaBursaFindByUsrSerial"/>
+            <xsd:complexType name="getAnggotaBursaFindByUsrSerialResponse">
+                <xsd:sequence>
+                    <xsd:element name="return" minOccurs="0" maxOccurs="unbounded" type="ns1:anggotaBursa"/>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:element name="getAnggotaBursaFindByUsrSerialResponse" type="tns:getAnggotaBursaFindByUsrSerialResponse"/>
+        </schema>
+    </wsdl:types>
+    <wsdl:message name="getAnggotaBursaFindByUsrSendMethodInput">
+        <wsdl:part name="parameters" element="tns:getAnggotaBursaFindByUsrSendMethod"/>
+    </wsdl:message>
+    <wsdl:message name="getAnggotaBursaFindByUsrSendMethodOutput">
+        <wsdl:part name="parameters" element="tns:getAnggotaBursaFindByUsrSendMethodResponse"/>
+    </wsdl:message>
+    <wsdl:message name="getAnggotaBursaFindByUsrSerialInput">
+        <wsdl:part name="parameters" element="tns:getAnggotaBursaFindByUsrSerial"/>
+    </wsdl:message>
+    <wsdl:message name="getAnggotaBursaFindByUsrSerialOutput">
+        <wsdl:part name="parameters" element="tns:getAnggotaBursaFindByUsrSerialResponse"/>
+    </wsdl:message>
+    <wsdl:portType name="AnggotaBursaSessionBeanService">
+        <wsdl:operation name="getAnggotaBursaFindByUsrSendMethod">
+            <wsdl:input message="tns:getAnggotaBursaFindByUsrSendMethodInput" xmlns:ns1="http://www.w3.org/2006/05/addressing/wsdl"
+                 ns1:Action=""/>
+            <wsdl:output message="tns:getAnggotaBursaFindByUsrSendMethodOutput" xmlns:ns1="http://www.w3.org/2006/05/addressing/wsdl"
+                 ns1:Action=""/>
+        </wsdl:operation>
+        <wsdl:operation name="getAnggotaBursaFindByUsrSerial">
+            <wsdl:input message="tns:getAnggotaBursaFindByUsrSerialInput" xmlns:ns1="http://www.w3.org/2006/05/addressing/wsdl"
+                 ns1:Action=""/>
+            <wsdl:output message="tns:getAnggotaBursaFindByUsrSerialOutput" xmlns:ns1="http://www.w3.org/2006/05/addressing/wsdl"
+                 ns1:Action=""/>
+        </wsdl:operation>
+    </wsdl:portType>
+    <wsdl:binding name="AnggotaBursaSessionBeanServiceSoapHttp" type="tns:AnggotaBursaSessionBeanService">
+        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <wsdl:operation name="getAnggotaBursaFindByUsrSendMethod">
+            <soap:operation soapAction=""/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getAnggotaBursaFindByUsrSerial">
+            <soap:operation soapAction=""/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:service name="AnggotaBursaSessionBeanService">
+        <wsdl:port name="AnggotaBursaSessionBeanServicePort" binding="tns:AnggotaBursaSessionBeanServiceSoapHttp">
+            <soap:address location="http://10.204.6.247:8100/AnggotaBursaSessionBean/AnggotaBursaSessionBeanService"/>
+        </wsdl:port>
+    </wsdl:service>
+</wsdl:definitions>

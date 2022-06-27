@@ -1,0 +1,156 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<jdevws:WebServiceProxy xmlns:jdevws="http://xmlns.oracle.com/jdeveloper/10130/webserviceproxy">
+   <list n="CHILD_NODES">
+      <url path="StmtBrokerSessionBeanService_Service.xml"/>
+      <url path="StmtBrokerSessionBeanService.wsdl"/>
+      <url path="StmtBrokerSessionBeanService.java"/>
+      <url path="types/UpdateStmtBrokerSetFlagResponse.java"/>
+      <url path="types/UpdateStmtBrokerSetFlag.java"/>
+      <url path="types/GetStmtBrokerFindByLimit.java"/>
+      <url path="types/package-info.java"/>
+      <url path="types/ObjectFactory.java"/>
+      <url path="StmtBrokerSessionBeanServicePortClient.java"/>
+      <url path="types/GetStmtBrokerFindByLimitResponse.java"/>
+      <url path="types/StmtBroker.java"/>
+      <url path="StmtBrokerSessionBeanService_Service.java"/>
+   </list>
+   <hash n="DATA_MODEL">
+      <value n="ATTACHMENT_ENCODING" v="MTOM"/>
+      <value n="FIXED_WSDL" v="true"/>
+      <list n="LOCAL_FILES"/>
+      <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.proxy.WebServiceProxy"/>
+      <url n="ORACLE_WEBSERVICES_XML" path="StmtBrokerSessionBeanService_Service.xml"/>
+      <hash n="PROPERTY_GROUPS">
+         <hash n="WSDL_TO_JAVA_PROPERTIES">
+            <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.java.WSDLToJavaProperties"/>
+            <value n="WSDL2JAVA_DEFAULT_PACKAGE" v="man.ias.proxy"/>
+            <value n="WSDL2JAVA_ROOT_VALUE_PACKAGE" v="man.ias.proxy.types"/>
+         </hash>
+      </hash>
+      <url n="PROXY_ANNOTATED_CLASS_LOCATION" path="../../../../../BrokerModel/src/man/ias/session/StmtBrokerSessionBean.java"/>
+      <url n="PROXY_ANNOTATED_CLASS_PROJECT" path="../../../../../BrokerModel/BrokerModel.jpr"/>
+      <value n="PROXY_ASYNC_METHODS" v="FOR_ENABLED"/>
+      <list n="PROXY_CLIENTS">
+         <url path="StmtBrokerSessionBeanServicePortClient.java"/>
+      </list>
+      <value n="PROXY_MAPPING_URL"/>
+      <hash n="PROXY_PORTS">
+         <hash n="StmtBrokerSessionBeanServicePort">
+            <value n="ACCESSES_DOC_WRAPPPED" v="true"/>
+            <value n="ACCESSES_RPC_ENCODED" v="false"/>
+            <value n="CLASS_NAME" v="man.ias.proxy.StmtBrokerSessionBeanService"/>
+            <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.proxy.ProxyPort"/>
+            <value n="NAME" v="StmtBrokerSessionBeanServicePort"/>
+            <hash n="OPERATIONS">
+               <hash n="getStmtBrokerFindByLimit">
+                  <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.proxy.ProxyOperation"/>
+                  <hash n="PROPERTY_GROUPS"/>
+               </hash>
+               <hash n="updateStmtBrokerSetFlag">
+                  <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.proxy.ProxyOperation"/>
+                  <hash n="PROPERTY_GROUPS"/>
+               </hash>
+            </hash>
+            <hash n="PROPERTY_GROUPS">
+               <hash n="WS_CLIENT_POLICY">
+                  <value n="addressing"/>
+                  <list n="management"/>
+                  <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.policy.PolicyClientModel"/>
+                  <value n="mtom"/>
+                  <hash n="POLICY_OVERRIDE_PROPERTIES"/>
+                  <list n="security"/>
+                  <value n="wsrm"/>
+               </hash>
+            </hash>
+            <url n="PROXY_ORIGINAL_PORT_ENDPOINT" protocol="http" host="localhost" port="7101" path="/Mandiri-BrokerModel-webapp/StmtBrokerSessionBeanService"/>
+            <url n="PROXY_PORT_ENDPOINT" protocol="http" host="soabpm-vm.site" port="8001" path="/StmtBrokerSessionBean/StmtBrokerSessionBeanService"/>
+         </hash>
+      </hash>
+      <value n="PROXY_SERVICE_NAME" v="StmtBrokerSessionBeanService"/>
+      <value n="PROXY_SERVICE_NAMESPACE" v="http://session.ias.man/"/>
+      <url n="PROXY_TARGET_PROJECT" path="../../../../BrokerServices.jpr"/>
+      <list n="PROXY_WSDL_IMPORT_LIST"/>
+      <url n="PROXY_WSDL_URL" path="StmtBrokerSessionBeanService.wsdl"/>
+      <hash n="REFERENCED_WEBSERVICE">
+         <list n="BD_">
+            <hash>
+               <value n="BOUND_PORT_TYPE" v="{http://session.ias.man/}StmtBrokerSessionBeanService"/>
+               <value n="DEFAULT_NAME" v="false"/>
+               <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.SOAPBinding"/>
+               <value n="NAME" v="{http://session.ias.man/}StmtBrokerSessionBeanServiceSoapHttp"/>
+               <list n="OP_BINDINGS">
+                  <hash>
+                     <value n="BD_SOAP_ACTION" v=""/>
+                     <value n="BD_SOAP_INPUT_USE" v="1"/>
+                     <value n="BD_SOAP_OUTPUT_USE" v="1"/>
+                     <value n="BD_SOAP_STYLE" v="1"/>
+                     <value n="BOUND_OPERATION" v="java.util.List&lt;man.ias.proxy.types.StmtBroker>.getStmtBrokerFindByLimit.java.lang.String"/>
+                     <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.SOAPOperationBinding"/>
+                     <hash n="PROPERTY_GROUPS"/>
+                  </hash>
+                  <hash>
+                     <value n="BD_SOAP_ACTION" v=""/>
+                     <value n="BD_SOAP_INPUT_USE" v="1"/>
+                     <value n="BD_SOAP_OUTPUT_USE" v="1"/>
+                     <value n="BD_SOAP_STYLE" v="1"/>
+                     <value n="BOUND_OPERATION" v="int.updateStmtBrokerSetFlag.java.lang.String.java.lang.String.java.lang.String.java.lang.String.long.java.lang.String"/>
+                     <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.SOAPOperationBinding"/>
+                     <hash n="PROPERTY_GROUPS"/>
+                  </hash>
+               </list>
+               <hash n="PROPERTY_GROUPS"/>
+            </hash>
+         </list>
+         <list n="BINDING_FILES"/>
+         <value n="GUID" v="034e84cd-0155-1000-81bb-c0a838015d76"/>
+         <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.proxy.WebServiceProxy$ProxyJavaWebService"/>
+         <list n="PO_">
+            <hash>
+               <value n="DEFAULT_NAME" v="false"/>
+               <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.SOAPPort"/>
+               <value n="NAME" v="StmtBrokerSessionBeanServicePort"/>
+               <value n="PORT_BINDING_NAME" v="{http://session.ias.man/}StmtBrokerSessionBeanServiceSoapHttp"/>
+               <list n="PORT_OPS">
+                  <hash>
+                     <value n="EXPOSED_BD_OPERATION" v="java.util.List&lt;man.ias.proxy.types.StmtBroker>.getStmtBrokerFindByLimit.java.lang.String"/>
+                     <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.PortOperation"/>
+                     <hash n="PROPERTY_GROUPS"/>
+                  </hash>
+                  <hash>
+                     <value n="EXPOSED_BD_OPERATION" v="int.updateStmtBrokerSetFlag.java.lang.String.java.lang.String.java.lang.String.java.lang.String.long.java.lang.String"/>
+                     <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.PortOperation"/>
+                     <hash n="PROPERTY_GROUPS"/>
+                  </hash>
+               </list>
+               <hash n="PROPERTY_GROUPS"/>
+               <url n="URL" protocol="http" host="localhost" port="7101" path="/Mandiri-BrokerModel-webapp/StmtBrokerSessionBeanService"/>
+            </hash>
+         </list>
+         <hash n="PROPERTY_GROUPS">
+            <hash n="WSDL_TO_JAVA_PROPERTIES">
+               <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.java.WSDLToJavaProperties"/>
+               <value n="WSDL2JAVA_DEFAULT_PACKAGE" v="man.ias.proxy"/>
+               <value n="WSDL2JAVA_ROOT_VALUE_PACKAGE" v="man.ias.proxy.types"/>
+            </hash>
+         </hash>
+         <list n="PT_">
+            <hash>
+               <value n="AUTO_SERVICE_INTERFACE"/>
+               <value n="DEFAULT_NAME" v="false"/>
+               <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.java.JavaPortType"/>
+               <value n="NAME" v="{http://session.ias.man/}StmtBrokerSessionBeanService"/>
+               <hash n="PROPERTY_GROUPS"/>
+               <value n="PT_CLASS" v="man.ias.proxy.StmtBrokerSessionBeanServiceImpl"/>
+               <value n="PT_SERVICE_INTERFACE" v="man.ias.proxy.StmtBrokerSessionBeanService"/>
+            </hash>
+         </list>
+         <url n="TARGET_PROJECT" path="../../../../BrokerServices.jpr"/>
+         <value n="WS_ORIG_GEN_DIRECTION" v="TOP_DOWN"/>
+         <value n="WS_TARGET_NAMESPACE" v="http://session.ias.man/"/>
+         <value n="WS_URI" v="StmtBrokerSessionBeanService"/>
+         <url n="WS_WSDL_FILE" path="StmtBrokerSessionBeanService.wsdl"/>
+      </hash>
+      <value n="SERVICE_ASYNC" v="false"/>
+      <value n="USE_WSDL_LOCATION" v="true"/>
+   </hash>
+</jdevws:WebServiceProxy>
